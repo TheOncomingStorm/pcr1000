@@ -1105,6 +1105,10 @@ class PCR1000:
 				if self.power == 1:
 					break
 			else:
+				self.SerialWrite("G105\r\n")
+				time.sleep(0.1)
+				self.SerialWrite("G105\r\n")
+				time.sleep(0.1)
 				self.serialport.setBaudrate(38400)
 				for i in range(0, tries):
 					self.SerialWrite("H101\r\n")
